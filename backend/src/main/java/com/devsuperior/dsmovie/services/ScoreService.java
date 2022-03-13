@@ -15,7 +15,7 @@ import com.devsuperior.dsmovie.repositories.UserRepository;
 
 @Service
 public class ScoreService {
-	
+
 	@Autowired
 	private MovieRepository movieRepository;
 	
@@ -45,10 +45,10 @@ public class ScoreService {
 		score = scoreRepository.saveAndFlush(score);
 		
 		double sum = 0.0;
-		for (Score s: movie.getScores()) {
+		for (Score s : movie.getScores()) {
 			sum = sum + s.getValue();
 		}
-		
+			
 		double avg = sum / movie.getScores().size();
 		
 		movie.setScore(avg);
